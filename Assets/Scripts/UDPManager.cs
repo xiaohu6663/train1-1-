@@ -143,20 +143,25 @@ public class UDPManager : MonoBehaviour
             recvStr = NormalizeAndDecode(recvData, recvLen, utf8Attempt);
             Debug.Log("[UDP] 收到消息: " + recvStr);
 
-            // 添加列车消息处理
+            // 添加列车消息处理 - 支持新格式 {K12345.png，R}
             if (recvStr.StartsWith("{") && recvStr.EndsWith("}"))
             {
                 MainThreadDispatcher.RunOnMainThread(() => {
                     try
                     {
-                        // 使用新的TrackManager系统创建列车
-                        if (TrackManager.Instance != null)
+                        // 优先使用TrainCanvasManager处理列车信号
+                        if (TrainCanvasManager.Instance != null)
+                        {
+                            TrainCanvasManager.Instance.ProcessUDPSignal(recvStr);
+                        }
+                        // 回退到TrackManager系统
+                        else if (TrackManager.Instance != null)
                         {
                             TrackManager.Instance.CreateTrain(recvStr);
                         }
+                        // 最后回退到TrainManager系统
                         else if (TrainManager.Instance != null)
                         {
-                            // 回退到旧的TrainManager系统
                             TrainManager.Instance.CreateTrain(recvStr);
                         }
                         else
