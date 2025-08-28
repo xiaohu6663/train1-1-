@@ -62,19 +62,7 @@ public class SystemTest : MonoBehaviour
         Debug.Log("=== 系统测试完成 ===");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 200, 100));
-        GUILayout.Label("系统测试", GUI.skin.box);
-        
-        if (GUILayout.Button("测试系统"))
-        {
-            TestSystem();
-        }
-        
-        GUILayout.Label("按T键快速测试");
-        GUILayout.EndArea();
-    }
+
 }
 
 

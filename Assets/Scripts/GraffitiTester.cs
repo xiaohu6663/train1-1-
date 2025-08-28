@@ -85,28 +85,7 @@ public class GraffitiTester : MonoBehaviour
         Debug.Log($"[GraffitiTester] 状态: {message}");
     }
     
-    private void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 300, 200));
-        GUILayout.Label("涂鸦系统测试器", GUI.skin.box);
-        
-        if (GUILayout.Button("测试单个文件"))
-        {
-            TestGraffiti();
-        }
-        
-        if (GUILayout.Button("测试多个文件"))
-        {
-            TestMultipleFiles();
-        }
-        
-        if (GUILayout.Button("检查系统状态"))
-        {
-            CheckSystemStatus();
-        }
-        
-        GUILayout.EndArea();
-    }
+
     
     private void CheckSystemStatus()
     {

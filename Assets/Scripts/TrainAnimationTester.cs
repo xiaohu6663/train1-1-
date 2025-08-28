@@ -132,41 +132,7 @@ public class TrainAnimationTester : MonoBehaviour
         Debug.Log("清除所有测试列车");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 220, 300, 200));
-        GUILayout.Label("列车动画测试控制", GUI.skin.box);
-        
-        if (GUILayout.Button("创建测试列车"))
-        {
-            CreateTestTrain();
-        }
-        
-        if (GUILayout.Button("暂停所有列车"))
-        {
-            PauseAllTrains();
-        }
-        
-        if (GUILayout.Button("恢复所有列车"))
-        {
-            ResumeAllTrains();
-        }
-        
-        if (GUILayout.Button("清除所有测试列车"))
-        {
-            ClearAllTestTrains();
-        }
-        
-        GUILayout.Label($"测试列车数量: {testTrains.Count}");
-        GUILayout.Label($"自动创建: {(autoCreateTrains ? "开启" : "关闭")}");
-        GUILayout.Label($"创建间隔: {createInterval}秒");
-        
-        autoCreateTrains = GUILayout.Toggle(autoCreateTrains, "自动创建列车");
-        createInterval = GUILayout.HorizontalSlider(createInterval, 1f, 10f);
-        GUILayout.Label($"间隔: {createInterval:F1}秒");
-        
-        GUILayout.EndArea();
-    }
+
     
     // 通过UDP模拟创建列车
     public void SimulateUDPTrainCreation(string config)

@@ -140,30 +140,7 @@ public class ErrorDiagnostic : MonoBehaviour
         Debug.Log("   - 重新导入项目");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 300, 200));
-        GUILayout.Label("错误诊断工具", GUI.skin.box);
-        
-        if (GUILayout.Button("诊断错误"))
-        {
-            DiagnoseErrors();
-        }
-        
-        if (GUILayout.Button("清理缓存"))
-        {
-            CleanupCache();
-        }
-        
-        if (GUILayout.Button("重新编译"))
-        {
-            RecompileScripts();
-        }
-        
-        GUILayout.Label("按D键快速诊断");
-        GUILayout.Label("按C键清理缓存");
-        GUILayout.EndArea();
-    }
+
     
     private void CleanupCache()
     {

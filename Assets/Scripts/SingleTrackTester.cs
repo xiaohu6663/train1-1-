@@ -86,32 +86,7 @@ public class SingleTrackTester : MonoBehaviour
         Debug.Log("✓ 已清理所有列车");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 280, 250, 120));
-        GUILayout.Label("单轨道测试工具", GUI.skin.box);
-        
-        if (GUILayout.Button("测试创建列车"))
-        {
-            TestCreateTrain();
-        }
-        
-        if (GUILayout.Button("清理所有列车"))
-        {
-            ClearAllTrains();
-        }
-        
-        GUILayout.Label("按T键快速测试");
-        GUILayout.Label("按C键清理列车");
-        
-        if (TrackManager.Instance != null)
-        {
-            GUILayout.Label($"轨道列车: {TrackManager.Instance.GetTrackTrainCount()}");
-            GUILayout.Label($"全局列车: {TrackManager.Instance.GetGlobalTrainCount()}");
-        }
-        
-        GUILayout.EndArea();
-    }
+
 }
 
 

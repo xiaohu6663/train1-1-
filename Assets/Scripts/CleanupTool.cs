@@ -45,19 +45,7 @@ public class CleanupTool : MonoBehaviour
         Debug.Log("请重新编译项目");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 200, 100));
-        GUILayout.Label("清理工具", GUI.skin.box);
-        
-        if (GUILayout.Button("清理缓存"))
-        {
-            CleanupUnityCache();
-        }
-        
-        GUILayout.Label("按C键快速清理");
-        GUILayout.EndArea();
-    }
+
 }
 
 

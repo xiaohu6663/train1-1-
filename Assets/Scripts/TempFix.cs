@@ -98,29 +98,7 @@ public class TempFix : MonoBehaviour
             Debug.LogWarning("✗ MainThreadDispatcher 异常");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 10, 250, 150));
-        GUILayout.Label("临时修复工具", GUI.skin.box);
-        
-        if (GUILayout.Button("修复编译问题"))
-        {
-            FixCompilationIssues();
-        }
-        
-        if (GUILayout.Button("验证系统"))
-        {
-            ValidateSystem();
-        }
-        
-        if (GUILayout.Button("创建测试列车"))
-        {
-            CreateTestTrain();
-        }
-        
-        GUILayout.Label("按F键快速修复");
-        GUILayout.EndArea();
-    }
+
     
     private void CreateTestTrain()
     {

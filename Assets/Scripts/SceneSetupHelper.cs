@@ -237,34 +237,7 @@ public class SceneSetupHelper : MonoBehaviour
         Debug.Log("✓ 创建了生成点");
     }
     
-    void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(10, 120, 250, 150));
-        GUILayout.Label("场景设置助手", GUI.skin.box);
-        
-        if (GUILayout.Button("自动设置场景"))
-        {
-            SetupScene();
-        }
-        
-        if (GUILayout.Button("检查组件状态"))
-        {
-            CheckComponentStatus();
-        }
-        
-        if (GUILayout.Button("创建列车预制件"))
-        {
-            SetupTrainPrefab();
-        }
-        
-        if (GUILayout.Button("创建生成点"))
-        {
-            SetupSpawnPoint();
-        }
-        
-        GUILayout.Label("按S键快速设置");
-        GUILayout.EndArea();
-    }
+
     
     private void CheckComponentStatus()
     {

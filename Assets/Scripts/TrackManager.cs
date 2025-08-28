@@ -450,16 +450,5 @@ public class TrackManager : MonoBehaviour
         return $"轨道列车: {currentTrains.Count}/{maxTrains}, 全局列车: {allTrains.Count}/{maxGlobalTrains}";
     }
     
-    void OnGUI()
-    {
-        if (!showDebugInfo) return;
-        
-        GUILayout.BeginArea(new Rect(10, 10, 300, 150));
-        GUILayout.Label("单轨道列车管理系统", GUI.skin.box);
-        GUILayout.Label($"全局列车: {allTrains.Count}/{maxGlobalTrains}");
-        GUILayout.Label($"轨道列车: {currentTrains.Count}/{maxTrains}");
-        GUILayout.Label($"循环模式: {(loopAnimation ? "开启" : "关闭")}");
-        GUILayout.Label($"动画片段: {(trackAnimation != null ? trackAnimation.name : "未设置")}");
-        GUILayout.EndArea();
-    }
+
 }
